@@ -1,0 +1,1 @@
+Images Adjusted Via: http://resizeimage.net/

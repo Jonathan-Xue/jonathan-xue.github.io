@@ -1,0 +1,60 @@
+#header {
+    align-items: center;
+    background-color: transparentize(desaturate(lighten(_palette(layout, bg), 3), 1.5), 0.05);;
+    display: flex;
+    font-size: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0.75em 0 1.5em;
+    position: fixed;
+    transition: background-color _duration(transition) ease-in-out;
+    width: 100%;
+    z-index: 1;
+
+    // moz, ms, webkit
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -webkit-align-items: center;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-transition: background-color _duration(transition) ease-in-out;
+    -ms-transition: background-color _duration(transition) ease-in-out;
+    -webkit-transition: background-color _duration(transition) ease-in-out;
+
+    // header visibility false
+    &.alt {
+        background-color: transparent;
+
+        // contains profile information
+        span {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    a {
+        color: _palette(text);
+        text-decoration: none;
+    }
+
+    // contains profile information
+    span {
+        @include font(_font(element, font-family), _font(element, font-weight), _font(element, letter-spacing), _font(element, line-height), _palette(text));
+        font-size: 0.8em;
+        opacity: 1;
+        transition: opacity _duration(transition) ease-in-out, visibility _duration(transition);
+        visibility: visible;
+
+        // moz, ms, webkit
+        -moz-transition: opacity _duration(transition) ease-in-out, visibility _duration(transition);
+        -ms-transition: opacity _duration(transition) ease-in-out, visibility _duration(transition);
+        -webkit-transition: opacity _duration(transition) ease-in-out, visibility _duration(transition);
+    }
+}

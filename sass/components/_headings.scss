@@ -1,0 +1,44 @@
+h1, h2, h3, h4, h5, h6 {
+     @include font(_font(heading, font-family), _font(heading, font-weight), _font(heading, letter-spacing), _font(heading, line-height), _palette(text));
+
+    text-transform: uppercase;
+
+    &.major {
+        border-bottom: solid 1px _palette(border);
+        margin: 0 0 .25em 0;
+    }
+
+    &.minor {
+        margin: 1em 0 0 0;
+    }
+
+    &.project {
+        border-bottom: solid 1px _palette(border);
+        margin: 0 0 .5em 0;
+        padding: 0 0 .5em 0;
+    }
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.875em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.125em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 0.75em;
+}

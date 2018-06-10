@@ -1,0 +1,52 @@
+// reset
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    // moz, ms, webkit
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+// disable transitions/animations until webpage has loaded
+.preload * {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+}
+
+// override user font preference
+:root {
+    font-size: _font(root);
+
+    @media screen and (max-width: _misc(breakpoint, small)){
+        font-size: 0.875 * _font(root);
+    }
+
+    @media screen and (min-width: _misc(breakpoint, large)){
+        font-size: 1.25vw;
+    }
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-image: linear-gradient(to top, transparentize(_palette(layout, bg), 0.2), transparentize(_palette(layout, bg), 0.2)), url("../images/bg.jpg");
+    background-size: auto, cover;
+    background-attachment: fixed, fixed;
+    background-position: center, center;
+    
+    @media screen and (max-width: _misc(breakpoint, xsmall)){
+        width: _misc(breakpoint, xsmall) !important;
+    }
+}

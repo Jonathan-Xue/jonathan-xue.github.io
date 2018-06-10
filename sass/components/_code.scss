@@ -1,0 +1,15 @@
+pre {
+    @include font(_font(code, font-family), _font(code, font-weight), _font(code, letter-spacing), _font(code, line-height), _palette(text));
+
+    margin: 1em 1em;
+
+    code {
+        background: _palette(tint);
+        border-radius: 5px;
+        border: solid 2px _palette(border);
+        display: block;
+        font-size: 1em;
+        padding: 0.5em 1em;
+        text-align: left;
+    }
+}

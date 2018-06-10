@@ -1,0 +1,90 @@
+.button {
+    @include font(_font(element, font-family), _font(element, font-weight), _font(element, letter-spacing), _font(element, line-height), _palette(text));
+
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none !important;
+    text-transform: uppercase;
+
+    &.generic {
+        border-radius: 5px;
+        border: solid 2px _palette(border);
+        display: inline-block;
+        font-size: .875em;
+        margin: 2em 0 0 0;
+        padding: 1em 2em;
+        text-align: center;
+
+        &:hover {
+            background-color: _palette(actions, hover-bg);
+        }
+
+        &:active {
+            background-color: _palette(actions, active-bg);
+        }
+
+        @media screen and (max-width: _misc(breakpoint, small)){
+            width: 100%;
+        }
+    }
+
+    &.resume {
+        border-radius: 5px;
+        border: solid 2px _palette(border);
+        display: inline-block;
+        font-size: 0.875em;
+        margin: .625em 0;
+        padding: .625em 1em;
+
+        &:before {
+            content: "Resume\00a0\00a0";
+
+            @media screen and (max-width: _misc(breakpoint, small)){
+                content: "";
+            }
+        }
+
+        &:hover {
+            background-color: _palette(actions, hover-bg);
+        }
+
+        &:active {
+            background-color: _palette(actions, active-bg);
+        }
+    }
+
+    &.learn-more {
+        align-items: center;
+        display: flex;
+        font-size: 0.875em;
+        margin: 2.5em 0;
+
+        // moz, ms, webkit
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -webkit-flex;
+
+        .icon {
+            font-size: 1.25em;
+            height: 1.75em;
+            margin: 0 .5em 0 0;
+            width: 1.75em;
+
+            &:hover {
+                background-color: _palette(actions, hover-bg);
+            }
+
+            &:active {
+                background-color: _palette(actions, active-bg);
+            }
+        }
+
+        &:after {
+            content: 'Learn More';
+        }
+    }
+}

@@ -1,0 +1,43 @@
+// Fonts
+// Ex. @include font-attributes(Raleway, Helvetica, sans-serif, #ffffff, normal, normal);
+@mixin font($font-family, $font-weight, $letter-spacing, $line-height, $color) {
+    font-family: #{$font-family};
+    font-weight: #{$font-weight};
+    letter-spacing: #{$letter-spacing};
+    line-height: #{$line-height};
+    color: #{$color};
+}
+
+// Vendorizes a declaration's property and/or value(s)
+// Ex. @include vendor('display', 'flex');
+@mixin vendor($property, $value) {
+    // Determine if property should expand.
+    $expandProperty: index($vendor-properties, $property);
+
+    // Determine if value should expand (and if so, add '-prefix-' placeholder).
+    $expandValue: false;
+
+    @each $x in $value {
+        @each $y in $vendor-values {
+            @if $y == str-slice($x, 1, str-length($y)) {
+                $value: set-nth($value, index($value, $x), "-prefix-" + $x);
+                $expandValue: true;
+            }
+        }
+    }
+
+    // Expand property
+    @if $expandProperty {
+        @each $vendor in $vendor-prefixes {
+            #{$vendor}#{$property}: #{str-replace-all($value, "-prefix-", $vendor)};
+        }
+    }
+    @else if $expandValue {
+        @each $vendor in $vendor-prefixes {
+            #{$property}: #{str-replace-all($value, "-prefix-", $vendor)};
+        }
+    }
+    @else {
+        #{$property}: #{$value};
+    }
+}

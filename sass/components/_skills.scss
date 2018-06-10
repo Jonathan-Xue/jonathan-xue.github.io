@@ -1,0 +1,33 @@
+#skills {
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    li {
+        display: inline-block;
+        font-size: 1.125em;
+        margin: .25em;
+        padding: .125em .5em;
+        list-style: none;
+
+        // expert
+        &.green {
+            color: rgb(0, 0, 0);
+            background: rgb(170, 225, 80);
+        }
+
+        // intermediate
+        &.yellow {
+            color: rgb(0, 0, 0);
+            background: rgb(240, 200, 0);
+        }
+
+        // beginner
+        &.red {
+            color: rgb(0, 0, 0);
+            background: rgb(255, 70, 70);
+        }
+    }
+}

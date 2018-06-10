@@ -1,0 +1,57 @@
+#banner {
+    display: block;
+    font-size: 1rem;
+    height: calc(100vh - #{_size(section-separation)});
+
+    @media screen and (max-width: _misc(breakpoint, medium)){
+        font-size: 0.875rem;
+    }
+
+    .inner {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        margin: 0 auto;
+        padding: 7.5em 0;
+        width: _size(inner-content-width, large);
+
+        // moz, ms, webkit
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        display:-moz-flex;
+        display:-ms-flex;
+        display:-webkit-flex;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+
+        @media screen and (max-width: _misc(breakpoint, medium)){
+            width: _size(inner-content-width, small);
+        }
+
+        .content{
+            @include font(_font(heading, font-family), _font(text, font-weight), _font(heading, letter-spacing), _font(heading, line-height), _palette(text));
+            display: block;
+            width: 100%;
+        }
+    }
+
+    // profile icon
+    .icon {
+        font-size: 2em;
+        height: 2.25em;
+        margin: 0;
+        width: 2.25em;
+    }
+
+    #name {
+        margin: 0.25em 0 .25em 0;
+    }
+
+    p {
+        font-size: 1.125em;
+        text-transform: uppercase;
+    }
+}

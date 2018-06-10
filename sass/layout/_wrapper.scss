@@ -1,0 +1,211 @@
+.wrapper {
+    font-size: 1rem;
+    display: block;
+    margin: _size(section-separation) 0;
+    position: relative;
+
+    &:before, &:after {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: '';
+        display: block;
+        height: _size(section-separation);
+        position: absolute;
+        width: 100%;
+    }
+
+    &:before {
+        left: 0;
+        top: (_size(section-separation) * -1);
+    }
+
+    &:after {
+        bottom: (_size(section-separation) * -1);
+        left: 0;
+        transform: scaleY(-1);
+
+        // moz, ms, webkit
+        -moz-transform: scaleY(-1);
+        -ms-transform: scaleY(-1);
+        -webkit-transform: scaleY(-1);
+    }
+
+    .inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 100%;
+        padding: 3em 0;
+        margin: 0 auto;
+        width: _size(inner-content-width, large);
+
+        // moz, ms, webkit
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -webkit-flex;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        -moz-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        -webkit-flex-wrap: nowrap;
+
+
+        @media screen and (max-width: _misc(breakpoint, medium)){
+            padding: 2em 0;
+            width: _size(inner-content-width, small);
+        }
+
+        @media screen and (max-width: _misc(breakpoint, small)){
+            flex-wrap: wrap;
+            padding: 1em 0;
+
+            // moz, ms, webkit
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -webkit-flex-wrap: wrap;
+        }
+
+        // contains textual information
+        .content {
+            @include font(_font(text, font-family), _font(text, font-weight), _font(text, letter-spacing), _font(text, line-height), _palette(text));
+            display: block;
+            width: 100%;
+        }
+    }
+
+    // alternating wrapper type
+    &.alt {
+        &:before {
+            transform: scaleX(-1);
+
+            // moz, ms, webkit
+            -moz-transform: scaleX(-1);
+            -ms-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+        }
+
+        &:after {
+            transform: scaleX(-1) scaleY(-1);
+
+            // moz, ms, webkit
+            -moz-transform: scaleX(-1) scaleY(-1);
+            -ms-transform: scaleX(-1) scaleY(-1);
+            -webkit-transform: scaleX(-1) scaleY(-1);
+        }
+    }
+
+    // generates style_ classes (grey)
+    @for $i from 1 through _misc(max-wrapper-styles) {
+        $j: 3 * ($i - 1);
+        $color: desaturate(lighten(_palette(layout, bg), $j), $j * 0.5);
+
+        &.style#{$i} {
+            background-color: $color;
+            &:before, &:after {
+                background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,100 100,0 100,100" style="fill:#{$color};" /></svg>');
+                box-shadow: inset 0 -1px 0 0 $color, 0 1px 0 0 $color;
+            }
+        }
+    }
+
+    // About Me, Skills, Experience, Education Sections
+    &.spotlight {
+        // content
+        // content image
+        // content
+        &:nth-child(2n - 1) {
+            .inner {
+                align-items: center;
+                flex-direction: row-reverse;
+                text-align: right;
+
+                // moz, ms, webkit
+                -moz-flex-direction: row-reverse;
+                -ms-flex-direction: row-reverse;
+                -webkit-flex-direction: row-reverse;
+                -moz-align-items: center;
+                -ms-align-items: center;
+                -webkit-align-items: center;
+            }
+
+            .image {
+                margin: 3em 0 3em 3em;
+
+                @media screen and (max-width: _misc(breakpoint, medium)){
+                    margin: 2em 0 2em 2em;
+                }
+
+                @media screen and (max-width: _misc(breakpoint, small)){
+                    margin: 1em 0 1em 1em;
+                }
+            }
+        }
+
+        //       content
+        // image content
+        //       content
+        &:nth-child(2n) {
+            .inner {
+                align-items: center;
+                flex-direction: row;
+                text-align: left;
+
+                // moz, ms, webkit
+                -moz-align-items: center;
+                -ms-align-items: center;
+                -webkit-align-items: center;
+                -moz-flex-direction: row;
+                -ms-flex-direction: row;
+                -webkit-flex-direction: row;
+            }
+
+            .image {
+                margin: 3em 3em 3em 0;
+
+                @media screen and (max-width: _misc(breakpoint, medium)){
+                    margin: 2em 2em 2em 0;
+                }
+
+                @media screen and (max-width: _misc(breakpoint, small)){
+                    margin: 1em 1em 1em 0;
+                }
+            }
+        }
+
+        // generates style_ classes (blue)
+        @for $i from 1 through _misc(max-wrapper-styles) {
+            $j: 3 * ($i - 1);
+            $color: saturate(darken(_palette(layout, accent), $j), $j * 0.5);
+
+            &.style#{$i} {
+                background-color: $color;
+                &:before, &:after {
+                    background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,100 100,0 100,100" style="fill:#{$color};" /></svg>');
+                    box-shadow: inset 0 -1px 0 0 $color, 0 1px 0 0 $color;
+                }
+            }
+        }
+
+        .image {
+            border-radius: 100%;
+            min-width: 15em;
+            max-width: 15em;
+
+            @media screen and (max-width: _misc(breakpoint, medium)){
+                min-width: 13.5em;
+                max-width: 13.5em;
+            }
+
+            @media screen and (max-width: _misc(breakpoint, small)){
+                min-width: 12em;
+                max-width: 12em;
+            }
+
+            img {
+                border-radius: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

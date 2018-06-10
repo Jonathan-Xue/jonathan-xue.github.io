@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,700|Source+Sans+Pro:300,600,300italic,600italic|Source+Code+Pro:300,600|Roboto+Mono:300,600");
+
+$misc: (
+	breakpoint: (
+		xsmall:								325px,
+		small:								650px,
+		medium:								975px,
+		large:								1300px,
+		xlarge:								1625px 
+	),
+	max-wrapper-styles:						6
+);
+
+$duration: (
+	transition:								0.25s
+);
+
+$size: (
+	inner-content-width: (
+		small: 								90%,
+		large: 								55em
+	),
+	section-separation: 					15vmin,
+	inline-element-spacing: 				3em
+);
+
+$font: (
+	heading: (
+		font-family: 						("Raleway", Helvetica, sans-serif),
+		font-weight: 						700,
+		letter-spacing: 					0.1em,
+		line-height: 						1.75
+	),
+	text: (
+		font-family: 						("Source Sans Pro", Helvetica, sans-serif),
+		font-weight: 						300,
+		letter-spacing: 					normal,
+		line-height: 						1.75
+	),
+	element: (
+		font-family: 						("Raleway", Helvetica, sans-serif),
+		font-weight: 						700,
+		letter-spacing: 					0.1em,
+		line-height: 						normal
+	),
+	code: (
+		font-family: 						("Source Code Pro", Roboto Mono, monospace),
+		font-weight: 						300,
+		letter-spacing:				 		normal,
+		line-height: 						1.75
+	),
+	root: 									16px
+);
+
+$palette: (
+	actions: (
+		hover-bg:							rgba(255,255,255,0.025),
+		active-bg:							rgba(255,255,255,0.075)
+	),	
+	layout: (
+		bg:									#2e3141,
+		accent:								#4c5c96
+	),
+	border:									rgba(255,255,255,0.125),
+	text:									rgba(255,255,255,1),
+	text-light:								rgba(255,255,255,0.35),
+	tint:									rgba(255,255,255,0.025)
+);
+
+// Vendor Information
+$vendor-prefixes: "-moz-", "-webkit-", "-ms-", "";
+
+// Properties that should be vendorized.
+$vendor-properties: "align-content", "align-items", "align-self", "animation", "animation-delay", "animation-direction", "animation-duration", "animation-fill-mode", "animation-iteration-count", "animation-name", "animation-play-state", "animation-timing-function", "appearance", "backface-visibility", "box-sizing", "filter", "flex", "flex-basis", "flex-direction", "flex-flow", "flex-grow", "flex-shrink", "flex-wrap", "justify-content", "object-fit", "object-position", "order", "perspective", "pointer-events", "transform", "transform-origin", "transform-style", "transition", "transition-delay", "transition-duration", "transition-property", "transition-timing-function", "user-select";
+
+// Values that should be vendorized.
+$vendor-values: "filter", "flex", "linear-gradient", "radial-gradient", "transform";

@@ -16,11 +16,11 @@
 
     &:before {
         left: 0;
-        top: (_size(section-separation) * -1);
+        top: _size(section-separation) * -1;
     }
 
     &:after {
-        bottom: (_size(section-separation) * -1);
+        bottom: _size(section-separation) * -1;
         left: 0;
         transform: scaleY(-1);
 

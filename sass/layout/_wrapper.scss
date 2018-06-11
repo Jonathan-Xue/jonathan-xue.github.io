@@ -185,14 +185,17 @@
 
         .image {
             border-radius: 100%;
-            width: 27.5%;
+            min-width: 27.5%;
+            max-width: 27.5%;
 
             @media screen and (max-width: _misc(breakpoint, medium)) {
-                width: 32.5%;
+                min-width: 32.5%;
+                max-width: 32.5%;
             }
 
             @media screen and (max-width: _misc(breakpoint, small)) {
-                width: 50%;
+                min-width: 50%;
+                max-width: 50%;
             }
 
             img {

@@ -42,9 +42,13 @@ html {
 
 body {
     background-image: linear-gradient(to top, transparentize(_palette(layout, bg), 0.2), transparentize(_palette(layout, bg), 0.2)), url("../images/bg.jpg");
-    background-size: auto, cover;
-    background-attachment: fixed, fixed;
+    background-size: auto, auto;
     background-position: center, center;
+
+    @media (hover: hover){
+        background-size: auto, cover;
+        background-attachment: fixed, fixed;
+    }
     
     @media screen and (max-width: _misc(breakpoint, xsmall)){
         width: _misc(breakpoint, xsmall) !important;

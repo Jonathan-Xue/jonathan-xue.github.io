@@ -32,7 +32,6 @@
 
     .inner {
         display: flex;
-        flex-direction: row;
         flex-wrap: nowrap;
         height: 100%;
         padding: 3em 0;
@@ -43,20 +42,16 @@
         display: -moz-flex;
         display: -ms-flex;
         display: -webkit-flex;
-        -moz-flex-direction: row;
-        -ms-flex-direction: row;
-        -webkit-flex-direction: row;
         -moz-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
         -webkit-flex-wrap: nowrap;
 
-
-        @media screen and (max-width: _misc(breakpoint, medium)){
+        @media screen and (max-width: _misc(breakpoint, medium)) {
             padding: 2em 0;
             width: _size(inner-content-width, small);
         }
 
-        @media screen and (max-width: _misc(breakpoint, small)){
+        @media screen and (max-width: _misc(breakpoint, small)) {
             flex-wrap: wrap;
             padding: 1em 0;
 
@@ -69,6 +64,7 @@
         // contains textual information
         .content {
             @include font(_font(text, font-family), _font(text, font-weight), _font(text, letter-spacing), _font(text, line-height), _palette(text));
+
             display: block;
             width: 100%;
         }
@@ -102,6 +98,7 @@
 
         &.style#{$i} {
             background-color: $color;
+
             &:before, &:after {
                 background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,100 100,0 100,100" style="fill:#{$color};" /></svg>');
                 box-shadow: inset 0 -1px 0 0 $color, 0 1px 0 0 $color;
@@ -114,38 +111,36 @@
         // content
         // content image
         // content
-        &:nth-child(2n - 1) {
-            .inner {
-                align-items: center;
-                flex-direction: row-reverse;
-                text-align: right;
+        .inner {
+            align-items: center;
+            flex-direction: row-reverse;
+            text-align: right;
 
-                // moz, ms, webkit
-                -moz-flex-direction: row-reverse;
-                -ms-flex-direction: row-reverse;
-                -webkit-flex-direction: row-reverse;
-                -moz-align-items: center;
-                -ms-align-items: center;
-                -webkit-align-items: center;
+            // moz, ms, webkit
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -webkit-align-items: center;
+            -moz-flex-direction: row-reverse;
+            -ms-flex-direction: row-reverse;
+            -webkit-flex-direction: row-reverse;
+        }
+
+        .image {
+            margin: 3em 0 3em 3em;
+
+            @media screen and (max-width: _misc(breakpoint, medium)) {
+                margin: 2em 0 2em 2em;
             }
 
-            .image {
-                margin: 3em 0 3em 3em;
-
-                @media screen and (max-width: _misc(breakpoint, medium)){
-                    margin: 2em 0 2em 2em;
-                }
-
-                @media screen and (max-width: _misc(breakpoint, small)){
-                    margin: 1em 0 1em 1em;
-                }
+            @media screen and (max-width: _misc(breakpoint, small)) {
+                margin: 1em 0 1em 1em;
             }
         }
 
         //       content
         // image content
         //       content
-        &:nth-child(2n) {
+        &.alt {
             .inner {
                 align-items: center;
                 flex-direction: row;
@@ -163,11 +158,11 @@
             .image {
                 margin: 3em 3em 3em 0;
 
-                @media screen and (max-width: _misc(breakpoint, medium)){
+                @media screen and (max-width: _misc(breakpoint, medium)) {
                     margin: 2em 2em 2em 0;
                 }
 
-                @media screen and (max-width: _misc(breakpoint, small)){
+                @media screen and (max-width: _misc(breakpoint, small)) {
                     margin: 1em 1em 1em 0;
                 }
             }
@@ -180,6 +175,7 @@
 
             &.style#{$i} {
                 background-color: $color;
+
                 &:before, &:after {
                     background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,100 100,0 100,100" style="fill:#{$color};" /></svg>');
                     box-shadow: inset 0 -1px 0 0 $color, 0 1px 0 0 $color;
@@ -189,17 +185,14 @@
 
         .image {
             border-radius: 100%;
-            min-width: 15em;
-            max-width: 15em;
+            width: 27.5%;
 
-            @media screen and (max-width: _misc(breakpoint, medium)){
-                min-width: 13.5em;
-                max-width: 13.5em;
+            @media screen and (max-width: _misc(breakpoint, medium)) {
+                width: 32.5%;
             }
 
-            @media screen and (max-width: _misc(breakpoint, small)){
-                min-width: 12em;
-                max-width: 12em;
+            @media screen and (max-width: _misc(breakpoint, small)) {
+                width: 50%;
             }
 
             img {

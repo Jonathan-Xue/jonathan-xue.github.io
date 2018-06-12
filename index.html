@@ -9,13 +9,41 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120796190-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-120796190-1');
+		</script>
+		<!-- General Data -->
 		<title>Jonathan Xue</title>
+		<meta name="description" content="Hi! I'm Jonathan Xue, a design-minded software developer focused on building functional applications. I am currently studying computer science at the University Of Illinois Urbana-Champaign." />
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Open Graph Data -->
+		<meta property="og:title" content="Jonathan Xue" />
+		<meta property="og:description" content="Hi! I'm Jonathan Xue, a design-minded software developer focused on building functional applications. I am currently studying computer science at the University Of Illinois Urbana-Champaign." />
+		<meta property="og:image" content="https://jonathanxue.com/logo.png" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Jonathan Xue" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://jonathanxue.com/" />
+		<!-- Twitter Card Data -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Jonathan Xue">
+		<meta name="twitter:description" content="Hi! I'm Jonathan Xue, a design-minded software developer focused on building functional applications. I am currently studying computer science at the University Of Illinois Urbana-Champaign.">
+		<meta name="twitter:image" content="http://jonathanxue.com/logo.png">
+		<meta name="twitter:creator" content="@jonathanxue3">
+		<meta name="twitter:site" content="@jonathanxue3">
+		<meta name="twitter:url" content="https://jonathanxue.com/" />
+		<!-- Links -->
 		<link rel="stylesheet" href="css/styles.css" />
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 	</head>
 	<body>
 		<!-- Parallax Effect Background Image Mobile Workaround -->
@@ -37,14 +65,14 @@
 				<div class="content">
 					<i class="icon fas fa-user-tie"></i>
 					<h1 class="major" id="name">Jonathan Xue</h1>
-					<p>Student. Programmer. Designer.</p>
+					<p>Student. Developer. Designer.</p>
 				</div>
 			</div>
 		</section>
 		<!-- About Me -->
 		<section class="wrapper spotlight style1">
 			<div class="inner">
-				<img src="images/profile.jpg" class="image"/>
+				<img src="images/profile.jpg" alt="Jonathan Xue" class="image"/>
 				<div class="content">
 					<h3 class="major">About Me</h3>
 					<p>Hi! My name is  Jonathan Xue and I am an incoming college freshmen with a passion for computer science. You're probably here to learn a bit more about me, so read on!</p>
@@ -61,7 +89,7 @@
 		<!-- Education -->
 		<section class="wrapper alt spotlight style2">
 			<div class="inner">
-				<img src="images/education.jpg" class="image"/>
+				<img src="images/education.jpg" alt="" class="image"/>
 				<div class="content">
 					<h3 class="major">Education</h3>
 					<!-- UIUC -->
@@ -110,7 +138,7 @@
 		<!-- Experience -->
 		<section class="wrapper spotlight style3">
 			<div class="inner">
-				<img src="images/experience.jpg" class="image"/>
+				<img src="images/experience.jpg" alt="" class="image"/>
 				<div class="content">
 					<h3 class="major">Experience</h3>
 					<div class="optional-section-block">
@@ -153,7 +181,7 @@
 		<!-- Skills -->
 		<section class="wrapper alt spotlight style4">
 			<div class="inner">
-				<img src="images/skills.jpg" class="image"/>
+				<img src="images/skills.jpg" alt="" class="image"/>
 				<div class="content">
 					<h3 class="major">Skills</h3>
 					<div id="skills">
@@ -191,7 +219,7 @@
 					<h3 class="major">Notable Projects</h3>
 					<section class="features">
 						<article>
-							<a href="https://devpost.com/software/watchdog-gtz0p8" target="_blank"><img src="images/projects//adjusted/watchdog.jpg" class="image"/></a>
+							<a href="https://devpost.com/software/watchdog-gtz0p8" target="_blank"><img src="images/projects//adjusted/watchdog.jpg" alt="Watchdog" class="image"/></a>
 							<div class="info">
 								<h5 class="project">Watchdog</h5>
 								<p>Built at MHacks X, Watchdog is a platform created to increase engagement in classrooms. Using a camera and Microsoft's Cognitive Services, Watchdog monitors a classroom and offers the teacher live, in-depth analytics on the current state of the room through collecting continuous data on the emotions and engagement of the students. The data is aggregated to display trends over time.</p>
@@ -199,7 +227,7 @@
 							</div>
 						</article>
 						<article>
-							<a href="https://devpost.com/software/aspecto" target="_blank"><img src="images/projects//adjusted/aspecto.jpg" class="image"/></a>
+							<a href="https://devpost.com/software/aspecto" target="_blank"><img src="images/projects//adjusted/aspecto.jpg" alt="Aspecto" class="image"/></a>
 							<div class="info">
 								<h5 class="project">Aspecto</h5>
 								<p>Built at Huskie Hacks - Health & Wellness, Aspecto is a platform aimed towards improving employees' mental and physical health within the workplace. Aspecto analyzes inputs from the user's microphone and camera to provide workers with a comprehensive overview of their physical and emotional state. It uses the data to generate live alerts regarding healthy habits such as posture and eye exercises.</p>
@@ -207,7 +235,7 @@
 							</div>
 						</article>
 						<article>
-							<a href="https://devpost.com/software/exterminat0r" target="_blank"><img src="images/projects/adjusted/exterminat0r.jpg" class="image"/></a>
+							<a href="https://devpost.com/software/exterminat0r" target="_blank"><img src="images/projects/adjusted/exterminat0r.jpg" alt="Exterminat0r" class="image"/></a>
 							<div class="info">
 								<h5 class="project">Exterminat0r</h5>
 								<p>Built at Hack Ridge, Exterminat0r is an experimental first-person shooter virtual reality game. It consists of two separate modes: aracde and survival. In arcade mode, the user has 60 seconds to shoot as many static blocks as possible. In survival mode, the user is placed in a custom map against infinite waves of enemy spawns. Motions are controlled via an X-Box Controller.</p>
@@ -215,7 +243,7 @@
 							</div>
 						</article>
 						<article>
-							<a href="https://devpost.com/software/caveat" target="_blank"><img src="images/projects/adjusted/caveat.jpg" class="image"/></a>
+							<a href="https://devpost.com/software/caveat" target="_blank"><img src="images/projects/adjusted/caveat.jpg" alt="Caveat" class="image"/></a>
 							<div class="info">
 								<h5 class="project">Caveat</h5>
 								<p>Built at CodeDay Chicago and Chicago Hacks, Caveat is a platform which serves comprehensive crime analytics within the city of Chicago. Using information from the Chicago Data Portal, a heat map is generated to facilitate an intuitive understanding regarding areas of high risk. Further analysis is also offered, detailing crime types and frequencies in the immediate vincinity.</p>

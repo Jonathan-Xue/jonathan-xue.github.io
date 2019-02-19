@@ -7,4 +7,23 @@
     font-size: 0.9em;
     margin: .75em 0 0 0;
     padding: .5em 1em .5em 1em;
+
+    .heading-info {
+        display: flex;
+        justify-content: space-between;
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            display: inline-block;
+            margin-left: 1.5em;
+            text-align: right;
+        }
+    }
+
+    .text-info {
+        text-align: left;
+    }
 }

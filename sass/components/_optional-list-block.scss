@@ -6,25 +6,12 @@
     }
 
     li {
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
         display: inline-block;
         font-size: 1.125em;
         margin: .25em;
         padding: .125em .5em;
         list-style: none;
-
-        &.green {
-            color: rgb(0, 0, 0);
-            background: rgb(170, 225, 80);
-        }
-
-        &.yellow {
-            color: rgb(0, 0, 0);
-            background: rgb(240, 200, 0);
-        }
-
-        &.red {
-            color: rgb(0, 0, 0);
-            background: rgb(255, 70, 70);
-        }
     }
 }
